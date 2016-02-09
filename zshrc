@@ -51,7 +51,8 @@ plugins=(git jsontools last-working-dir sudo vagrant)
 # User configuration
 
   export PATH="/home/vmunoz/.rvm/gems/ruby-1.9.3-p551/bin:/home/vmunoz/.rvm/gems/ruby-1.9.3-p551@global/bin:/home/vmunoz/.rvm/rubies/ruby-1.9.3-p551/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/vmunoz/.rvm/bin"
-# export MANPATH="/usr/local/man:$MANPATH"
+  export MANPATH="/usr/local/man:$MANPATH"
+  export PATH=$PATH:$HOME/bin
 
 source $ZSH/oh-my-zsh.sh
 
