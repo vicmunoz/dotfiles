@@ -27,4 +27,7 @@ set smarttab
 " always uses spaces instead of tab characters
 set expandtab
 
+" Setting auto-change directory to directory of the current file
+" Further details in (http://vim.wikia.com/wiki/Set_working_directory_to_the_current_file)
+autocmd BufEnter * silent! lcd %:p:h
 
