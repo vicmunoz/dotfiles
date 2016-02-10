@@ -1,10 +1,13 @@
 "Putting line numbers on all files by default
 set number
+
 " Set syntax on
 syntax on
+
 " Indent automatically depending on filetype
 filetype indent on
 set autoindent
+
 " Case insensitive search
 set ic
 " Higlhight search
