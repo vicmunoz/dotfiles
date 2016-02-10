@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/vmunoz/.oh-my-zsh
+export ZSH=/home/vmunoz/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -19,9 +19,6 @@ ZSH_THEME="suvash"
 
 # Uncomment the following line to change how often to auto-update (in days).
 # export UPDATE_ZSH_DAYS=13
-
-# Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
 # ENABLE_CORRECTION="true"
@@ -49,22 +46,19 @@ HIST_STAMPS="yyyy-mm-dd"
 plugins=(git jsontools last-working-dir sudo vagrant)
 
 # User configuration
+export PATH="/home/vmunoz/.rvm/gems/ruby-1.9.3-p551/bin:/home/vmunoz/.rvm/gems/ruby-1.9.3-p551@global/bin:/home/vmunoz/.rvm/rubies/ruby-1.9.3-p551/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/vmunoz/.rvm/bin"
+export MANPATH="/usr/local/man:$MANPATH"
+export PATH=$PATH:$HOME/bin
 
-  export PATH="/home/vmunoz/.rvm/gems/ruby-1.9.3-p551/bin:/home/vmunoz/.rvm/gems/ruby-1.9.3-p551@global/bin:/home/vmunoz/.rvm/rubies/ruby-1.9.3-p551/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/vmunoz/.rvm/bin"
-  export MANPATH="/usr/local/man:$MANPATH"
-  export PATH=$PATH:$HOME/bin
-
+# Basic load of oh-my-zsh configuration
 source $ZSH/oh-my-zsh.sh
 
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vi'    # remote session editor
+else
+  export EDITOR='vim'   # local session editor
+fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
