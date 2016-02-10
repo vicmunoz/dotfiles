@@ -1,5 +1,7 @@
 "Putting line numbers on all files by default
 set number
+" Set syntax on
+syntax on
 " Indent automatically depending on filetype
 filetype indent on
 set autoindent
@@ -7,7 +9,7 @@ set autoindent
 set ic
 " Higlhight search
 set hls
-    
+
 "Configuring Solarized color-scheme
 syntax enable
 set background=dark
