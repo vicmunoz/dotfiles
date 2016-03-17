@@ -112,7 +112,7 @@ fi
 PATH=$PATH:$HOME/Scripts
 
 # add liquidprompt to startup (https://github.com/nojhan/liquidprompt) - vmunoz
-source ~/Scripts/liquidprompt/liquidprompt
+source ~/bin/liquidprompt/liquidprompt
 
 # colored man pages as per https://wiki.archlinux.org/index.php/Man_page#Colored_man_pages
 man() {

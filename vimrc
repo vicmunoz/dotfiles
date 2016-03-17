@@ -73,4 +73,20 @@ if &t_Co > 2 || has("gui_running")
   set hlsearch
 endif
 
+" Mapping for navigation over windows
+nmap <silent> <A-Up> :wincmd k<CR>
+nmap <silent> <A-Down> :wincmd j<CR>
+nmap <silent> <A-Left> :wincmd h<CR>
+nmap <silent> <A-Right> :wincmd l<CR>
+
+" Alias unnamed register to the + register, which is the X Window clipboard 
+set clipboard=unnamedplus
+
+" Package manager for Vim scripts
+" http://www.vim.org/scripts/script.php?script_id=42
+execute pathogen#infect()
+
+" Configuring <Leader> key 
+let mapleader=","
+
 
