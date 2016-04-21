@@ -58,4 +58,6 @@ fi
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias mv='mv --suffix='.'$(date +%s)'.bkp''
+alias cp='cp --suffix='.'$(date +%s)'.bkp''
 
