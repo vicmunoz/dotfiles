@@ -40,10 +40,17 @@ set hls               " Higlhight search
 set history=50	      " keep 50 lines of command line history
 set ruler		          " show the cursor position all the time
 
-" Configuring color-scheme Solarized 
-" syntax enable  # testing commenting this, I think it's not needed
-set background=dark
-colorscheme solarized
+
+if has ('gui_running')
+  " Configuring color-scheme Solarized 
+  " syntax enable  # testing commenting this, I think it's not needed
+  set background=dark
+  colorscheme solarized
+else
+  " in terminal mode
+  colorscheme default
+endif
+
 
 " Setting tab size to 4 spaces
 " http://stackoverflow.com/questions/1878974/vim-how-to-redefine-tab-as-4-spaces
