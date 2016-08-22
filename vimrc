@@ -52,7 +52,7 @@ else
 endif
 
 
-" Setting tab size to 4 spaces
+" Setting tab size to 2 spaces
 " http://stackoverflow.com/questions/1878974/vim-how-to-redefine-tab-as-4-spaces
 set tabstop=2         " size of a hard tabstop
 set shiftwidth=2      " size of an 'indent'
