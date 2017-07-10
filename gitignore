@@ -1,0 +1,68 @@
+# Good examples here: https://github.com/github/gitignore
+
+# CTAGS #
+#########
+.tags
+.tags_sorted_by_file
+
+# Logs and databases #
+######################
+*.log
+*.sql
+*.sqlite
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Backup and temp files #
+#########################
+/tmp/
+*.bak
+*.bkp
+*.old
+*.swp
+*~  
+
+# Ruby files #
+##############
+*.iml
+*.gem
+*.rbc
+.bundle
+.config
+.yardoc
+Gemfile.lock
+InstalledFiles
+_yardoc
+coverage
+doc/
+lib/bundler/man
+pkg
+rdoc
+spec/reports
+cucumber/reports
+features/reports
+test/tmp
+test/version_tmp
+tmp
+*.bundle
+*.so
+*.o
+*.a
+mkmf.log
+*~
+*swp
+rubocop.out
+.idea/
+
+# Project files #
+#################
+*.sublime_project
+*.sublime-workspace

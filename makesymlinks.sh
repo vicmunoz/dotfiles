@@ -15,7 +15,7 @@ dir=~/dotfiles
 olddir=~/dotfiles_$(date +%s)
 # list of files/folders to symlink in homedir
 # based on platform, files could be different ie: zshrc.linux, zshrc.darwin
-files="bashrc zshrc oh-my-zsh vimrc vim"
+files="bashrc zshrc oh-my-zsh vimrc vim gitignore"
 
 ##########
 
