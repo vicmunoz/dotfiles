@@ -48,7 +48,7 @@ if has ('gui_running')
   colorscheme solarized
 else
   " in terminal mode
-  colorscheme default
+  colorscheme desert
 endif
 
 
@@ -80,8 +80,8 @@ if &t_Co > 2 || has("gui_running")
   set hlsearch
 endif
 
-" Mapping for navigation over windows
-nmap <silent> <A-Up> :wincmd k<CR>
+" Mapping for navigation over windows with new shortcut Alt+key
+nmap <silent> <A-Up> :wincmd k<CR>      
 nmap <silent> <A-Down> :wincmd j<CR>
 nmap <silent> <A-Left> :wincmd h<CR>
 nmap <silent> <A-Right> :wincmd l<CR>
