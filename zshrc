@@ -35,6 +35,7 @@ export MANPATH="/usr/local/man:$MANPATH"
 export PATH=$PATH:$HOME/bin
 export JAVA_HOME="/usr/lib/jvm/java-1.8.0-openjdk-amd64"
 export GIT_SSL_NO_VERIFY=1
+export TERM=xterm
 
 # Basic load of oh-my-zsh configuration
 source $ZSH/oh-my-zsh.sh
