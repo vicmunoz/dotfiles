@@ -45,6 +45,12 @@ for file in $files; do
   ln -s $dir/$file ~/.$file
 done
 
+# Clone vim plugins
+echo -n "Starting download of vim plugins"
+cd $dir/vim
+git clone git@github.com:vim-ruby/vim-ruby.git
+git clone git@github.com:vimwiki/vimwiki.git
+cd $dir
 
 install_zsh () {
 # Test to see if zshell is installed.  If it is:
