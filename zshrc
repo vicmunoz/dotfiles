@@ -21,10 +21,9 @@ HIST_STAMPS="yyyy-mm-dd"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(docker git jsontools last-working-dir sudo vagrant)
+plugins=(docker git jsontools last-working-dir sudo vagrant rvm)
 
 # User configuration
-export PATH="/home/vmunoz/.rvm/gems/ruby-1.9.3-p551/bin:/home/vmunoz/.rvm/gems/ruby-1.9.3-p551@global/bin:/home/vmunoz/.rvm/rubies/ruby-1.9.3-p551/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/vmunoz/.rvm/bin"
 export MANPATH="/usr/local/man:$MANPATH"
 export PATH=$PATH:$HOME/bin
 

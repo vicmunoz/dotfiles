@@ -99,7 +99,7 @@ man() {
     man "$@"
 }
 
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+# export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 # adding JAVA_HOME
 if [[ -d "/usr/lib/jvm/java-1.8.0-openjdk-amd64" ]]; then
