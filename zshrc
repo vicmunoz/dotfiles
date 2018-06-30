@@ -3,9 +3,6 @@ export ZSH=$HOME/.oh-my-zsh
 
 ZSH_THEME="suvash"
 
-# Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
-
 # Uncomment the following line to use hyphen-insensitive completion. Case
 # sensitive completion must be off. _ and - will be interchangeable.
 # HYPHEN_INSENSITIVE="true"
@@ -19,9 +16,6 @@ ZSH_THEME="suvash"
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 HIST_STAMPS="yyyy-mm-dd"
-
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -52,9 +46,6 @@ fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
 
 # Loading aliases
 if [ -f ~/.aliases ]; then
