@@ -129,7 +129,9 @@ man() {
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 # adding JAVA_HOME
-export JAVA_HOME="/usr/lib/jvm/java-1.8.0-openjdk-amd64"
+if [[ -d "/usr/lib/jvm/java-1.8.0-openjdk-amd64" ]]; then
+  export JAVA_HOME="/usr/lib/jvm/java-1.8.0-openjdk-amd64"
+fi
 
 export GIT_SSL_NO_VERIFY=1
 

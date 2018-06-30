@@ -33,7 +33,10 @@ plugins=(docker git jsontools last-working-dir sudo vagrant)
 export PATH="/home/vmunoz/.rvm/gems/ruby-1.9.3-p551/bin:/home/vmunoz/.rvm/gems/ruby-1.9.3-p551@global/bin:/home/vmunoz/.rvm/rubies/ruby-1.9.3-p551/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/vmunoz/.rvm/bin"
 export MANPATH="/usr/local/man:$MANPATH"
 export PATH=$PATH:$HOME/bin
-export JAVA_HOME="/usr/lib/jvm/java-1.8.0-openjdk-amd64"
+
+if [[ -d "/usr/lib/jvm/java-1.8.0-openjdk-amd64" ]]; then
+  export JAVA_HOME="/usr/lib/jvm/java-1.8.0-openjdk-amd64"
+fi
 export GIT_SSL_NO_VERIFY=1
 export TERM=xterm
 
