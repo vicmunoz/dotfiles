@@ -60,6 +60,11 @@ install_dotfiles () {
   git clone https://github.com/nojhan/liquidprompt.git
   echo "liquidprompt done"
 
+  # Exclude vim plugins and liquidprompt from git track files
+  echo "Adding vim plugins and liquidprompt folder to git exclude"
+  echo "liquidprompt/" >> $dir/.git/info/exclude
+  echo "vim/bundle/" >> $dir/.git/info/exclude
+
 }
 
 install_zsh () {
