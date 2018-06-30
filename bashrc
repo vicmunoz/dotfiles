@@ -97,8 +97,8 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
+if [ -f ~/.aliases ]; then
+    . ~/.aliases
 fi
 
 # enable programmable completion features (you don't need to enable
@@ -107,9 +107,6 @@ fi
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
-
-# adding scripts directory to $PATH - vmunoz
-PATH=$PATH:$HOME/Scripts
 
 # add liquidprompt to startup (https://github.com/nojhan/liquidprompt) - vmunoz
 source ~/dotfiles/liquidprompt/liquidprompt

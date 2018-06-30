@@ -1,0 +1,5 @@
+# SHELL aliases
+# 
+alias mv='mv --suffix='.'$(date +%s)'.bkp''
+alias cp='cp --suffix='.'$(date +%s)'.bkp''
+
