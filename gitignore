@@ -28,7 +28,8 @@ Thumbs.db
 *.bkp
 *.old
 *.swp
-*~  
+*~ 
+bkp 
 
 # Ruby files #
 ##############
