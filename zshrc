@@ -48,6 +48,11 @@ fi
 
 # Loading aliases
 if [ -f ~/.aliases ]; then
-    . ~/.aliases
+  . ~/.aliases
+fi
+
+# Loading docker env vars
+if [ -f ~/.docker/docker.env ]; then
+  source ~/.docker/docker.env 
 fi
 
