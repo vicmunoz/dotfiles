@@ -110,6 +110,6 @@ export GIT_SSL_NO_VERIFY=1
 
 # Loading docker env vars
 if [ -f ~/.docker/docker.env ]; then
-  source ~/.docker/docker.env 
+  . ~/.docker/docker.env 
 fi
 

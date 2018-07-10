@@ -53,6 +53,6 @@ fi
 
 # Loading docker env vars
 if [ -f ~/.docker/docker.env ]; then
-  source ~/.docker/docker.env 
+  . ~/.docker/docker.env 
 fi
 
