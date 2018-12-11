@@ -66,3 +66,8 @@ rubocop.out
 #################
 *.sublime_project
 *.sublime-workspace
+
+# Ansible files #
+# ###############
+*.retry
+

@@ -3,6 +3,8 @@
 alias mv='mv --suffix='.'$(date +%s)'.bkp''
 alias cp='cp --suffix='.'$(date +%s)'.bkp''
 
+alias rm=trash
+
 alias vless='vim -u /usr/share/vim/vim80/macros/less.vim'
 
 # enable color support of ls and also add handy aliases
