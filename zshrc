@@ -56,3 +56,5 @@ if [ -f ~/.docker/docker.env ]; then
   . ~/.docker/docker.env 
 fi
 
+# Setting sockets directory for screen
+export SCREENDIR=$HOME/.screen
