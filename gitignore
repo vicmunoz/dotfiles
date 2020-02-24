@@ -102,3 +102,8 @@ coverage.xml
 .hypothesis/
 .pytest_cache/
 
+# Security certificate files #
+##############################
+*.key
+*.crt
+
