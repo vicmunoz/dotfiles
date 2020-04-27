@@ -62,10 +62,11 @@ mkmf.log
 rubocop.out
 .idea/
 
-# Project files #
+# Text Editor files #
 #################
 *.sublime_project
 *.sublime-workspace
+.vscode/
 
 # Ansible files #
 # ###############
