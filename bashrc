@@ -113,3 +113,8 @@ if [ -f ~/.docker/docker.env ]; then
   . ~/.docker/docker.env 
 fi
 
+
+# Load pyenv automatically
+export PATH="$HOME/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
