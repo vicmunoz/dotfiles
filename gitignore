@@ -69,11 +69,11 @@ rubocop.out
 .vscode/
 
 # Ansible files #
-# ###############
+#################
 *.retry
 
 # Python Environments #
-# #####################
+#######################
 .env
 .venv
 env/
@@ -81,8 +81,9 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+.python-version
 
-# Pyton Byte-compiled / optimized / DLL files #
+# Python Byte-compiled / optimized / DLL files #
 ###############################################
 __pycache__/
 *.py[cod]

@@ -21,7 +21,7 @@ HIST_STAMPS="yyyy-mm-dd"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(docker git jsontools last-working-dir sudo rvm virtualenv virtualenvwrapper kubectl)
+plugins=(docker git jsontools last-working-dir sudo rvm virtualenv virtualenvwrapper kubectl pyenv)
 
 # User configuration
 export MANPATH="/usr/local/man:$MANPATH"
@@ -59,9 +59,11 @@ fi
 # Setting sockets directory for screen
 export SCREENDIR=$HOME/.screen
 
-
-
 # Load pyenv automatically
 export PATH="$HOME/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
+
+# Get virtualenvwrapper to create virtual environments using pyenv
+# See: https://github.com/pyenv/pyenv-virtualenvwrapper#using-pyvenv-instead-of-virtualenv
+export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
