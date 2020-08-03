@@ -44,7 +44,7 @@ install_ohmybash() {
 install_ohmyzsh() {
     if [ $VERBOSE -eq 1 ]; then printf "Installing oh-my-zsh...\n"; fi
     cd ~
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh --unattended)"
     printf "Installation of oh-my-zsh done\n"
     if [ $VERBOSE -eq 1 ]; then printf "Checking current SHELL...\n"; fi
     # Set the default shell to zsh if it isn't currently set to zsh
@@ -98,9 +98,11 @@ check_zshell() {
     fi
 }
 
-install_dotfiles() {
+# install_dotfiles() {
 
-}
+# }
+
+
 ##############
 #### MAIN ####
 ##############
@@ -140,4 +142,4 @@ if [ MY_SHELL==zsh ]; then
     dotfiles_files=zsh_files
 fi
 
-install_dotfiles
+# install_dotfiles
