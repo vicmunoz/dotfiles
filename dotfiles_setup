@@ -1,0 +1,143 @@
+#!/bin/bash
+# Setup script file
+
+VERBOSE=0
+
+# dotfiles directory
+dir=~/dotfiles
+# old dotfiles backup directory
+olddir=~/dotfiles_$(date +%s)
+# list of files/folders to symlink in homedir
+zsh_files="zshrc vimrc vim gitignore aliases dircolors"
+
+
+### WIP ###
+
+print_help() {
+    printf "Usage: dotfiles_setup [OPTIONS] bash|zsh laptop|server\n\n"
+    printf "Setup dotfiles in \$HOME directory\n\n"
+    printf "OPTIONS:\n"
+    printf "  -v, --verbose             Display verbose output\n"
+    printf "  -h, --help                Display this help and exit\n"
+    exit
+}
+
+download_tool() {
+    if [ $VERBOSE -eq 1 ]; then printf "Checking download tool available..\n"; fi
+    if [ -f /usr/bin/curl ]; then
+        if [ $VERBOSE -eq 1 ]; then printf "Download tool curl detected\n"; fi
+        MY_TOOL=curl
+    elif [ -f /usr/bin/wget ]; then
+        if [ $VERBOSE -eq 1 ]; then printf "Download tool wget detected\n"; fi
+        MY_TOOL=wget
+    else
+        printf "Download tool not detected. Please install curl or wget\n"
+        printf "Exiting..."
+        exit
+    fi
+}
+
+install_ohmybash() {
+    printf "Installing oh-my-bash...\n"
+}
+
+install_ohmyzsh() {
+    if [ $VERBOSE -eq 1 ]; then printf "Installing oh-my-zsh...\n"; fi
+    cd ~
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+    printf "Installation of oh-my-zsh done\n"
+    if [ $VERBOSE -eq 1 ]; then printf "Checking current SHELL...\n"; fi
+    # Set the default shell to zsh if it isn't currently set to zsh
+    if [[ ! $(echo $SHELL) == $(which zsh) ]] && [[ ! $(echo $SHELL) == '/bin/zsh' ]]; then
+        if [ $VERBOSE -eq 1 ]; then printf "Changing default SHELL to ZSH..."; fi
+        chsh -s $(which zsh)
+    fi
+}
+
+exit_zshell_lower() {
+    printf "ZSH version detected is lower than recommended\n"
+    printf "Upgrade ZSH or try with BASH\n"
+    printf "Exiting..."
+    exit
+}
+
+check_zshell() {
+    if [ -f /bin/zsh -o -f /usr/bin/zsh ]; then
+        my_zsh_version=$(zsh --version | awk '{print $2}')
+        if [ $VERBOSE -eq 1 ]; then printf "ZSH installation detected: $(zsh --version)\n"; fi
+        if [ $VERBOSE -eq 1 ]; then printf "ZSH version detected: $my_zsh_version\n"; fi
+        if [ $VERBOSE -eq 1 ]; then printf "Recommended version for oh-my-zsh is ZSH 5.0.8 or higher\n"; fi
+        my_zsh_major=$(echo $my_zsh_version | awk -F. '{print $1}' )
+        my_zsh_minor=$(echo $my_zsh_version | awk -F. '{print $2}' )
+        my_zsh_patch=$(echo $my_zsh_version | awk -F. '{print $3}' )
+        let "my_zsh_version_major = my_zsh_major"
+        let "my_zsh_version_minor = my_zsh_minor"
+        let "my_zsh_version_patch = my_zsh_patch"
+        if [[ my_zsh_version_major -lt 5 ]]; then
+            exit_zshell_lower
+        elif [[ my_zsh_version_major -eq 5 ]]; then
+            if [[ my_zsh_version_minor -eq 0 ]]; then
+                if [[ my_zsh_version_patch -lt 8 ]]; then
+                    exit_zshell_lower
+                elif [[ my_zsh_version_patch -eq 8 ]]; then
+                    if [ $VERBOSE -eq 1 ]; then printf "ZSH version detected is the minimum recommended\n"; fi
+                else
+                    if [ $VERBOSE -eq 1 ]; then printf "ZSH version detected is higher than recommended\n"; fi
+                fi
+            else
+                if [ $VERBOSE -eq 1 ]; then printf "ZSH version detected is higher than recommended\n"; fi
+            fi
+        else
+            if [ $VERBOSE -eq 1 ]; then printf "ZSH version detected is higher than recommended\n"; fi
+        fi
+    else
+        printf "ZSH installation not detected\n"
+        printf "Install ZSH or try with BASH\n"
+        printf "Exiting..."
+        exit
+    fi
+}
+
+install_dotfiles() {
+
+}
+##############
+#### MAIN ####
+##############
+
+# Checking OPTIONS and MY_SHELL to use
+while [ -n "$1" ]; do
+    case "$1" in 
+    -h)         print_help;;
+    --help)     print_help;;
+    --verbose)  VERBOSE=1; shift; break;;
+    bash)       MY_SHELL=bash; break ;;
+    zsh)        MY_SHELL=zsh; break ;;
+    *) printf "Option $1 not recognized\n"; print_help ;;
+    esac
+done
+
+# Checking MY_COMPUTER mode to install
+if [ -n "$2" ]; then
+    case "$2" in
+    laptop)     MY_COMPUTER=laptop;;
+    server)     MY_COMPUTER=server;;
+    *) printf "Option $2 not recognized\n"; print_help ;;
+    esac
+else
+    print_help
+fi
+
+if [ $VERBOSE -eq 1 ]; then printf "Starting dotfiles_setup with verbosity...\n"; fi
+if [ $VERBOSE -eq 1 ]; then printf "Running with selected options: '$1' - '$2'\n"; fi
+download_tool
+
+if [ MY_SHELL==zsh ]; then
+    # Validate ZSH is within minimum version recommended
+    check_zshell
+    # Install oh-my-zsh
+    install_ohmyzsh
+    dotfiles_files=zsh_files
+fi
+
+install_dotfiles
