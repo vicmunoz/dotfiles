@@ -113,8 +113,12 @@ if [ -f ~/.docker/docker.env ]; then
   . ~/.docker/docker.env 
 fi
 
-
 # Load pyenv automatically
 export PATH="$HOME/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
+
+# NVM (Node Version Manager) settings [see https://github.com/nvm-sh/nvm]
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
