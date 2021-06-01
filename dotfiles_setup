@@ -12,6 +12,7 @@ zsh_files="zshrc vimrc vim gitignore aliases dircolors"
 
 
 ### WIP ###
+# pending to complete the copy of dotfiles and symlinks, similar to work done in makesmylinks.sh
 
 print_help() {
     printf "Usage: dotfiles_setup [OPTIONS] bash|zsh laptop|server\n\n"
@@ -39,12 +40,13 @@ download_tool() {
 
 install_ohmybash() {
     printf "Installing oh-my-bash...\n"
+    printf "WIP - not working yet"
 }
 
 install_ohmyzsh() {
     if [ $VERBOSE -eq 1 ]; then printf "Installing oh-my-zsh...\n"; fi
     cd ~
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh --unattended)"
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
     printf "Installation of oh-my-zsh done\n"
     if [ $VERBOSE -eq 1 ]; then printf "Checking current SHELL...\n"; fi
     # Set the default shell to zsh if it isn't currently set to zsh
@@ -100,6 +102,9 @@ check_zshell() {
 
 # install_dotfiles() {
 
+
+# include execution of below command
+# git config --global core.excludesFile '~/.gitignore'
 # }
 
 
@@ -112,6 +117,7 @@ while [ -n "$1" ]; do
     case "$1" in 
     -h)         print_help;;
     --help)     print_help;;
+    -v)  VERBOSE=1; shift; break;;
     --verbose)  VERBOSE=1; shift; break;;
     bash)       MY_SHELL=bash; break ;;
     zsh)        MY_SHELL=zsh; break ;;

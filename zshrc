@@ -66,6 +66,7 @@ eval "$(pyenv virtualenv-init -)"
 
 # Get virtualenvwrapper to create virtual environments using pyenv
 # See: https://github.com/pyenv/pyenv-virtualenvwrapper#using-pyvenv-instead-of-virtualenv
+export PATH=$PATH:$HOME/.local/bin
 export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
 
 # NVM (Node Version Manager) settings [see https://github.com/nvm-sh/nvm]
@@ -73,3 +74,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+cd ~
+
+# Loading RVM
+source $HOME/.rvm/scripts/rvm
