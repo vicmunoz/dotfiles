@@ -3,6 +3,24 @@ export ZSH=$HOME/.oh-my-zsh
 
 ZSH_THEME="suvash"
 
+# Loading aliases
+if [ -f ~/.aliases ]; then
+  . ~/.aliases
+fi
+
+# Load pyenv automatically
+# export PATH="$HOME/.pyenv/bin:$PATH"
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+# eval "$(pyenv init -)"
+# eval "$(pyenv virtualenv-init -)"
+
+# Get virtualenvwrapper to create virtual environments using pyenv
+# See: https://github.com/pyenv/pyenv-virtualenvwrapper#using-pyvenv-instead-of-virtualenv
+export PATH=$PATH:$HOME/.local/bin
+export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
+export VIRTUALENVWRAPPER_PYTHON=$(which python3)
+
 # Uncomment the following line to use hyphen-insensitive completion. Case
 # sensitive completion must be off. _ and - will be interchangeable.
 # HYPHEN_INSENSITIVE="true"
@@ -21,7 +39,7 @@ HIST_STAMPS="yyyy-mm-dd"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(docker git jsontools last-working-dir sudo rvm virtualenv virtualenvwrapper kubectl pyenv)
+plugins=(docker git jsontools last-working-dir sudo rvm virtualenv virtualenvwrapper kubectl)
 
 # User configuration
 export MANPATH="/usr/local/man:$MANPATH"
@@ -46,11 +64,6 @@ fi
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-# Loading aliases
-if [ -f ~/.aliases ]; then
-  . ~/.aliases
-fi
-
 # Loading docker env vars
 if [ -f ~/.docker/docker.env ]; then
   . ~/.docker/docker.env 
@@ -58,16 +71,6 @@ fi
 
 # Setting sockets directory for screen
 export SCREENDIR=$HOME/.screen
-
-# Load pyenv automatically
-export PATH="$HOME/.pyenv/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
-
-# Get virtualenvwrapper to create virtual environments using pyenv
-# See: https://github.com/pyenv/pyenv-virtualenvwrapper#using-pyvenv-instead-of-virtualenv
-export PATH=$PATH:$HOME/.local/bin
-export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
 
 # NVM (Node Version Manager) settings [see https://github.com/nvm-sh/nvm]
 export NVM_DIR="$HOME/.nvm"
