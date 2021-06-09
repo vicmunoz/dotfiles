@@ -81,3 +81,7 @@ cd ~
 
 # Loading RVM
 source $HOME/.rvm/scripts/rvm
+
+# Loading Go
+export GOPATH=$(go env GOPATH)
+export PATH=$PATH:$(go env GOPATH)/bin
